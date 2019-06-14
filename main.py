@@ -24,7 +24,7 @@ log.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
 logger = log.getLogger(__name__)
 
 #~~~~~~~ ImageAI ~~~~~~#
-#execution_path = os.getcwd()
+execution_path = os.getcwd()
 """
 execution_path = "/Users/davidamb/telegram_bots/hackaton_vlabs"
 detector = ObjectDetection()
@@ -68,14 +68,12 @@ def rewind(update, context):
 
 
 def count_x(update, context):
-	file_path = "/Users/davidamb/telegram_bots/hackaton_vlabs/img.jpg"
 	image_id = update.message.photo[-1]
 	image = bot_core.bot.get_file(image_id)
 	image.download('img.jpg')
 	while True:
-		if os.path.isfile(file_path) == True:
+		if os.path.isfile("img.jpg") == True:
 			break
-	execution_path = "/Users/davidamb/telegram_bots/hackaton_vlabs"
 	detector = ObjectDetection()
 	detector.setModelTypeAsRetinaNet()
 	detector.setModelPath(os.path.join(execution_path, "resnet50_coco_best_v2.0.1.h5"))
@@ -119,8 +117,9 @@ def error(update, context):
 
 
 ####### IGNITION #######
+# To set API token set env variable (do "export BOT_API_TOKEN=your_token")
 TOKEN = os.getenv("BOT_API_TOKEN")
-bot_core = Updater("832870755:AAHoS4O6MzKXR6pMWRpANU46NKDE_xuTf10", use_context=True)
+bot_core = Updater(TOKEN, use_context=True)
 bot = bot_core.dispatcher
 
 #======= LOGICS =======#

@@ -120,7 +120,7 @@ def error(update, context):
 
 ####### IGNITION #######
 TOKEN = os.getenv("BOT_API_TOKEN")
-bot_core = Updater("766731952:AAH6Xarc4gOOfWKI0kVYB8bVZs46_PdGVvE", use_context=True)
+bot_core = Updater("832870755:AAHoS4O6MzKXR6pMWRpANU46NKDE_xuTf10", use_context=True)
 bot = bot_core.dispatcher
 
 #======= LOGICS =======#

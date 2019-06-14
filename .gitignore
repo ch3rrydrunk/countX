@@ -1,0 +1,6 @@
+.vscode/
+*.[oa]
+.DS_Store
+env*
+.vscode
+

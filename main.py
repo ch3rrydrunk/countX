@@ -119,7 +119,7 @@ def error(update, context):
 ####### IGNITION #######
 # To set API token set env variable (do "export BOT_API_TOKEN=your_token")
 TOKEN = os.getenv("BOT_API_TOKEN")
-bot_core = Updater(TOKEN, use_context=True)
+bot_core = Updater("766731952:AAH6Xarc4gOOfWKI0kVYB8bVZs46_PdGVvE", use_context=True)
 bot = bot_core.dispatcher
 
 #======= LOGICS =======#

@@ -25,23 +25,6 @@ logger = log.getLogger(__name__)
 
 #~~~~~~~ ImageAI ~~~~~~#
 execution_path = os.getcwd()
-"""
-execution_path = "/Users/davidamb/telegram_bots/hackaton_vlabs"
-detector = ObjectDetection()
-detector.setModelTypeAsRetinaNet()
-detector.setModelPath(os.path.join(execution_path , "resnet50_coco_best_v2.0.1.h5"))
-detector.loadModel()
-"""
-
-#~~~~~~~ Proxyfy ~~~~~~#
-'''
-# Be sure to add "request_kwargs=REQUEST_KWARGS" as Updater parameter if you wanna use proxy
-REQUEST_KWARGS={
-    'proxy_url': 'http://PROXY_HOST:PROXY_PORT/',
-    # Optional, if you need authentication:
-    'username': 'PROXY_USER',
-    'password': 'PROXY_PASS',
-}'''
 
 ######### LOGICS ########
 #~~~~~~~ Commands ~~~~~~#
@@ -87,7 +70,6 @@ def count_x(update, context):
 	update.message.reply_text("На фото - {} объектов\n".format(i),
 								reply_markup=markup)
 	update.message.reply_photo(file)
-#	close(file)
 	return MAIN
 
 
@@ -119,7 +101,7 @@ def error(update, context):
 ####### IGNITION #######
 # To set API token set env variable (do "export BOT_API_TOKEN=your_token")
 TOKEN = os.getenv("BOT_API_TOKEN")
-bot_core = Updater("766731952:AAH6Xarc4gOOfWKI0kVYB8bVZs46_PdGVvE", use_context=True)
+bot_core = Updater(TOKEN, use_context=True)
 bot = bot_core.dispatcher
 
 #======= LOGICS =======#

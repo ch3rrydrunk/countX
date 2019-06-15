@@ -37,26 +37,32 @@ def start(update, context):
 
 
 def first_menu(update, context):
-	update.message.reply_text("Начнем?\n"
+	query = update.callback_query
+	query.edit_message_text(
+		text="Начнем?\n"
 								"Просто сфотографируй группу,"
-								"чтобы быстро посчитать количество человек!\n",
-								reply_markup=markup)
+								"чтобы быстро посчитать количество человек!\n"
+	)
 	return MENU
 
 
 def second_menu(update, context):
-	update.message.reply_text("Начнем?\n"
-								"Просто сфотографируй группу,"
-								"чтобы быстро посчитать количество человек!\n",
-								reply_markup=markup)
+	query = update.callback_query
+	query.edit_message_text(
+		text="Начнем?\n"
+			 "Просто сфотографируй группу,"
+			 "чтобы быстро посчитать количество человек!\n"
+	)
 	return MENU_10
 
 
 def third_menu(update, context):
-	update.message.reply_text("Начнем?\n"
-								"Просто сфотографируй группу,"
-								"чтобы быстро посчитать количество человек!\n",
-								reply_markup=markup)
+	query = update.callback_query
+	query.edit_message_text(
+		text="Начнем?\n"
+			 "Просто сфотографируй группу,"
+			 "чтобы быстро посчитать количество человек!\n"
+	)
 	return MENU_50
 
 

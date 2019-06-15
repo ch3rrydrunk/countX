@@ -90,11 +90,11 @@ def count_x(update, context):
 	detector.setModelTypeAsRetinaNet()
 	detector.setModelPath(os.path.join(execution_path, "resnet50_coco_best_v2.0.1.h5"))
 	detector.loadModel()
-	detections = detector.detectObjectsFromImage(input_image=os.path.join(execution_path, "img.jpg"), output_image_path=os.path.join(execution_path , "imgnew.jpg"))
+	detections = detector.detectObjectsFromImage(input_image=os.path.join(execution_path, "img.jpg"), output_image_path=os.path.join(execution_path , "imgnew.jpg"), minimum_percentage_probability = 50)
 	file = open('imgnew.jpg', 'rb')
 	i = 0
 	for each in detections:
-		if (each["name"] == "person" and each["percentage_probability"] > 60):
+		if (each["name"] == "person" and each["percentage_probability"] > 50):
 			i += 1
 	update.message.reply_text("На фото - {} объектов\n".format(i),
 								reply_markup=markup)
@@ -113,7 +113,7 @@ def count_x_10(update, context):
 	detector.setModelTypeAsRetinaNet()
 	detector.setModelPath(os.path.join(execution_path, "resnet50_coco_best_v2.0.1.h5"))
 	detector.loadModel()
-	detections = detector.detectObjectsFromImage(input_image=os.path.join(execution_path, "img.jpg"), output_image_path=os.path.join(execution_path , "imgnew.jpg"))
+	detections = detector.detectObjectsFromImage(input_image=os.path.join(execution_path, "img.jpg"), output_image_path=os.path.join(execution_path , "imgnew.jpg"), minimum_percentage_probability = 40)
 	file = open('imgnew.jpg', 'rb')
 	i = 0
 	for each in detections:
@@ -136,7 +136,7 @@ def count_x_100(update, context):
 	detector.setModelTypeAsRetinaNet()
 	detector.setModelPath(os.path.join(execution_path, "resnet50_coco_best_v2.0.1.h5"))
 	detector.loadModel()
-	detections = detector.detectObjectsFromImage(input_image=os.path.join(execution_path, "img.jpg"), output_image_path=os.path.join(execution_path , "imgnew.jpg"))
+	detections = detector.detectObjectsFromImage(input_image=os.path.join(execution_path, "img.jpg"), output_image_path=os.path.join(execution_path , "imgnew.jpg"), minimum_percentage_probability = 10)
 	file = open('imgnew.jpg', 'rb')
 	i = 0
 	for each in detections:

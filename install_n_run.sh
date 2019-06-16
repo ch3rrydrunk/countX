@@ -7,5 +7,5 @@
 #brew install python3
 python3 -m venv env
 pip install -r requirements.txt
-export BOT_API_TOKEN="766731952:AAH6Xarc4gOOfWKI0kVYB8bVZs46_PdGVvE"
+export BOT_API_TOKEN="813975112:AAEnHpE9CJVNRTa7GF8815IZ1hyWnwPrTOs"
 python3 main.py
